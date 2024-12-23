@@ -5,25 +5,21 @@ const GameBoard = ({ updateScore }) => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
-  const [gridSize, setGridSize] = useState(4);  // Default grid size (4x4)
+  const [gridSize, setGridSize] = useState(4);  
 
-  // Function to generate number pairs for the grid
   const generatePairs = (size) => {
     const totalCards = size * size;
     const numbers = [];
 
-    // Generate a list of numbers (each number will appear twice)
     for (let i = 1; i <= totalCards / 2; i++) {
-      numbers.push(i, i);  // Add the same number twice for pairs
+      numbers.push(i, i); 
     }
-
-    // Shuffle the numbers randomly
     return numbers.sort(() => Math.random() - 0.5);
   };
 
   useEffect(() => {
     const initializeGame = () => {
-      const pairs = generatePairs(gridSize); // Generate pairs based on grid size
+      const pairs = generatePairs(gridSize);
       const shuffledCards = pairs.map((pair, index) => ({
         id: index,
         number: pair,

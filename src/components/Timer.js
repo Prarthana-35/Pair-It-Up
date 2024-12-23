@@ -1,15 +1,14 @@
-// Timer.js
 class Timer {
     constructor(duration, callback) {
-      this.duration = duration; // duration in seconds
+      this.duration = duration; 
       this.remainingTime = duration;
-      this.callback = callback; // callback function to be called when timer reaches 0
+      this.callback = callback;
       this.interval = null;
     }
   
     start() {
       if (this.interval) {
-        return; // Timer is already running
+        return; 
       }
   
       this.interval = setInterval(() => {
@@ -18,7 +17,7 @@ class Timer {
           console.log(`Time remaining: ${this.remainingTime}s`);
         } else {
           this.stop();
-          this.callback(); // Trigger callback when timer reaches 0
+          this.callback(); 
         }
       }, 1000);
     }

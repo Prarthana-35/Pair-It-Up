@@ -45,7 +45,6 @@ class Multiplayer {
   
     updateGameState(state) {
       console.log("Game state updated:", state);
-      // Implement your game state update logic here
     }
   
     disconnect() {
