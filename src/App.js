@@ -118,6 +118,7 @@ function App() {
           handleFlip={handleFlip}
           currentPlayer={currentPlayer}
           handlePlayerScore={handlePlayerScore}
+          updateScore={(newScore) => setScore(newScore)}
         />
       )}
     </div>
