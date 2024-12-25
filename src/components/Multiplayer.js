@@ -1,4 +1,3 @@
-// Multiplayer.js
 class Multiplayer {
     constructor(serverUrl) {
       this.serverUrl = serverUrl;
