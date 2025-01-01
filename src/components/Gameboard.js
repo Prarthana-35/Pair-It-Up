@@ -45,6 +45,7 @@ const GameBoard = ({ updateScore }) => {
     }
     return () => clearInterval(timerInterval);
   }, [currentMode, currentPlayer, playerTimes]);
+
   const handleCardFlip = (id) => {
     if (
       flippedCards.length < 2 &&
@@ -104,6 +105,7 @@ const GameBoard = ({ updateScore }) => {
       }
     }
   };
+
   useEffect(() => {
     if (currentMode) {
       checkCompletion();
@@ -122,7 +124,7 @@ const GameBoard = ({ updateScore }) => {
   };
 
   return (
-    <div>
+    <div className="bg-gray-900 text-yellow-900 flex flex-col items-center justify-center h-screen">
       <div className="space-x-4 mt-4">
         <button
           className="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-400"
@@ -154,7 +156,7 @@ const GameBoard = ({ updateScore }) => {
       )}
 
       <div
-        className="grid mt-4"
+        className="grid mt-4 gap-4"
         style={{ gridTemplateColumns: `repeat(${gridSize}, 1fr)` }}
       >
         {cards.map((card, index) => (
@@ -163,6 +165,11 @@ const GameBoard = ({ updateScore }) => {
             data={card}
             flipped={flippedCards.includes(index) || matchedCards.includes(index)}
             onClick={() => handleCardFlip(index)}
+            customClass={`bg-gray-800 border-2 border-gray-600 ${
+              flippedCards.includes(index) || matchedCards.includes(index)
+                ? "text-yellow-400 text-shadow-md"
+                : "text-gray-500"
+            }`}
           />
         ))}
       </div>
