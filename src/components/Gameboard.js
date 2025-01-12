@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import "../App.css";
@@ -146,7 +148,7 @@ const GameBoard = ({ updateScore }) => {
           {currentMode === "Multiplayer" && (
             <p className="text-lg">Player {currentPlayer}'s Turn</p>
           )}
-          <p className="timer text-red-600 text-xl font-bold">Time: {timer}s</p>
+          <p className="timer text-green-600 text-xl font-bold">Time: {timer}s</p>
           {currentMode === "Multiplayer" && (
             <p className="text-lg">
               Scores: Player 1: {scores.player1}, Player 2: {scores.player2}
